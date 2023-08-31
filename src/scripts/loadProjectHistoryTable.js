@@ -1,7 +1,7 @@
 const categoryToColorMap = {
+    backend: "success",
     cloud: "primary",
     database: "danger",
-    backend: "success",
     frontend: "info text-light",
     other: "dark"
 };
@@ -59,6 +59,8 @@ const projectHistoryData = [
         technologies: [
             { name: "Next.js", category: "frontend" },
             { name: "React", category: "frontend" },
+            { name: "React Testing Library", category: "other" },
+            { name: "Jest", category: "other" },
             { name: "TypeScript", category: "frontend" },
             { name: "Material UI", category: "frontend" }
         ],
@@ -171,12 +173,12 @@ const projectHistoryData = [
             "Testing"
         ],
         startDate: "2023-08-02",
-        endDate: "Current"
+        endDate: "2023-09-02"
     }
   ];
 
-  // Load project history table data on load
-  window.onload = (event) => {
+// Load project history table data on load
+window.onload = (event) => {
     const sortedProjectHistoryData = projectHistoryData.sort((a, b) => b.startDate.localeCompare(a.startDate));
 
     for (const projectData of sortedProjectHistoryData) {
@@ -196,6 +198,8 @@ const projectHistoryData = [
         tableRow.appendChild(clientCell);
         tableRow.appendChild(projectCell);
 
+        // Sort by technology category in ascending alphabetical order
+        const sortedTechnologies = technologies.sort((a, b) => a.category.localeCompare(b.category));
         const technologiesID = `${clientProjectID}-technologies`;
         const technologiesList = document.createElement("td");
 
@@ -206,7 +210,7 @@ const projectHistoryData = [
         innerTechnologiesList.id = technologiesID;
         
         // Display technologies as rounded badges with their respective colors based on category
-        for (const technology of technologies) {
+        for (const technology of sortedTechnologies) {
             const { name, category } = technology;
             const color = categoryToColorMap[category];
             const technologyCell = document.createElement("span");
