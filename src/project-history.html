@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CGI - Bootstrap Technical Training - Spencer Plasse</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Custom CSS stylesheets -->
+		<link href="./styles.css" rel="stylesheet" />
+
+		<!-- Bootstrap installation via CDN -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	</head>
+  <body>
+    <!-- Bootstrap JavaScript installation via CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+
+    <div class="container">
+			<nav class="navbar navbar-expand-md d-print navbar-light bg-light" role="navigation">
+				<a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="#">CGI</a>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About Me</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="project-history.html">Project History</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="contact.html">Contact Me</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+      <div class="row no-gutters">
+        <div class="d-flex justify-content-center mt-2">
+          <div class="d-block">
+						<h2>Project History</h2>
+						<div class="accordion accordion-flush" id="accordionExample">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingColorLegend">
+									<button class="accordion-button text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColorLegend" aria-expanded="true" aria-controls="collapseColorLegend">
+										Color Legend
+									</button>
+								</h2>
+								<div id="collapseColorLegend" class="accordion-collapse collapse show" aria-labelledby="headingColorLegend" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<section class="hstack gap-3">
+											<p><span class="badge rounded-circle p-2 text-bg-primary"> </span> Cloud</p>
+											<p><span class="badge rounded-circle p-2 text-bg-info"> </span> Front-End</p>
+											<p><span class="badge rounded-circle p-2 text-bg-success"> </span> Back-End</p>
+											<p><span class="badge rounded-circle p-2 text-bg-danger"> </span> Database</p>
+											<p><span class="badge rounded-circle p-2 text-bg-dark"> </span> Other</p>
+											<p><span class="badge rounded-circle p-2 text-bg-warning"> </span> Project Responsibility</p>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<table class="table table-hover table-bordered">
+								<thead class="table-dark">
+									<tr>
+										<th>Client</th>
+										<th>Project</th>
+										<th>Technologies</th>
+										<th>Responsibilities</th>
+										<th>Period</th>
+									</tr>
+								</thead>
+								<!-- Dynamically populated via JavaScript -->
+								<tbody id="project-history-table-body" class="table-white"></tbody>
+							</table>
+						</div>
+          </div>
+        </div>
+      </div>
+		</div>
+
+    <script type="text/javascript">
+      const categoryToColorMap = {
+        cloud: "primary",
+        database: "danger",
+        backend: "success",
+        frontend: "info text-light",
+        other: "dark"
+      };
+
+      const projectHistoryData = [
+      {
+          client: "CGI",
+          project: "Boot Camp",
+          clientProjectID: "cgi-bootcamp",
+          technologies: [
+            { name: "SQL Server", category: "database" },
+            { name: "ASP.NET MVC", category: "backend" },
+            { name: "C#", category: "backend" },
+            { name: "JavaScript", category: "frontend" },
+            { name: "Bootstrap", category: "frontend" }
+          ],
+          responsibilities: [
+            "Full-Stack Development",
+            "Documentation"
+          ],
+          startDate: "2022-01-02",
+          endDate: "2022-02-02"
+        },
+        {
+          client: "NASBA",
+          project: "CPA Evolution / Gateway 3.0",
+          clientProjectID: "nasba-gw",
+          technologies: [
+            { name: "Amazon Web Services (AWS)", category: "cloud" },
+            { name: "AWS Lambda", category: "cloud" },
+            { name: "Amazon SQS", category: "cloud" },
+            { name: "AWS Step Functions", category: "cloud" },
+            { name: "AWS DynamoDB", category: "cloud" },
+            { name: "Serverless", category: "cloud" },
+            { name: "MySQL", category: "database" },
+            { name: "Python", category: "backend" },
+            { name: "React", category: "frontend" },
+            { name: "TypeScript", category: "frontend" },
+            { name: "Bootstrap", category: "frontend" }
+          ],
+          responsibilities: [
+            "Full-Stack Development",
+            "Database Development",
+            "QA/Defect Resolution",
+            "Deployments",
+            "Documentation"
+          ],
+          startDate: "2022-03-02",
+          endDate: "2023-08-02"
+        },
+        {
+          client: "Farm Bureau Insurance of Tennessee (FBITN)",
+          project: "CXO",
+          clientProjectID: "fbitn-cxo",
+          technologies: [
+            { name: "Next.js", category: "frontend" },
+            { name: "React", category: "frontend" },
+            { name: "TypeScript", category: "frontend" },
+            { name: "Material UI", category: "frontend" }
+          ],
+          responsibilities: [
+            "Front-End Development",
+						"Testing"
+          ],
+          startDate: "2023-08-02",
+          endDate: "Current"
+        },
+        {
+          client: "CGI",
+          project: "YEET",
+          clientProjectID: "cgi-yeet",
+          technologies: [
+            { name: "SQL Server", category: "database" },
+            { name: "ASP.NET MVC", category: "backend" },
+            { name: "C#", category: "backend" },
+            { name: "React", category: "frontend" },
+            { name: "JavaScript", category: "frontend" },
+            { name: "Bootstrap", category: "frontend" }
+          ],
+          responsibilities: [
+            "Full-Stack Development",
+            "Database Development",
+            "Code Reviews"
+          ],
+          startDate: "2023-03-02",
+          endDate: "Current"
+        },
+        {
+          client: "CGI",
+          project: "React 101 Technical Training",
+          clientProjectID: "cgi-react",
+          technologies: [
+            { name: "HTML5", category: "frontend" },
+            { name: "CSS3", category: "frontend" },
+            { name: "React", category: "frontend" },
+            { name: "JavaScript", category: "frontend" },
+            { name: "Bootstrap", category: "frontend" }
+          ],
+          responsibilities: [
+            "Front-End Design",
+            "Front-End Development",
+            "Documentation",
+            "Testing"
+          ],
+          startDate: "2022-07-02",
+          endDate: "2022-08-02"
+        },
+        {
+          client: "CGI",
+          project: "Angular 101 Technical Training",
+          clientProjectID: "cgi-angular",
+          technologies: [
+            { name: "HTML5", category: "frontend" },
+            { name: "CSS3", category: "frontend" },
+            { name: "Angular", category: "frontend" },
+            { name: "TypeScript", category: "frontend" },
+            { name: "Bootstrap", category: "frontend" },
+            { name: "Mock API (rxjs)", category: "other" }
+          ],
+          responsibilities: [
+            "Front-End Design",
+            "Full-Stack Development",
+            "API Integration",
+            "Documentation",
+            "Testing"
+          ],
+          startDate: "2022-09-02",
+          endDate: "2022-11-02"
+        },
+        {
+          client: "CGI",
+          project: "NextJS Technical Training",
+          clientProjectID: "cgi-nextjs",
+          technologies: [
+            { name: "HTML5", category: "frontend" },
+            { name: "CSS3", category: "frontend" },
+            { name: "Next.js", category: "frontend" },
+            { name: "React", category: "frontend" },
+            { name: "TypeScript", category: "frontend" },
+            { name: "Tailwind CSS", category: "frontend" },
+            { name: "Spotify API", category: "other" }
+          ],
+          responsibilities: [
+            "Front-End Design",
+            "Full-Stack Development",
+            "API Integration",
+            "Documentation",
+            "Testing"
+          ],
+          startDate: "2023-06-02",
+          endDate: "2023-07-02"
+        },
+        {
+          client: "CGI",
+          project: "Bootstrap/HTML5 Technical Training",
+          clientProjectID: "cgi-bootstrap-html5",
+          technologies: [
+            { name: "HTML5", category: "frontend" },
+            { name: "CSS3", category: "frontend" },
+            { name: "JavaScript", category: "frontend" },
+            { name: "Bootstrap", category: "frontend" }
+          ],
+          responsibilities: [
+            "Front-End Design",
+            "Front-End Development",
+            "Documentation",
+            "Testing"
+          ],
+          startDate: "2023-08-02",
+          endDate: "Current"
+        }
+      ];
+
+      // Load project history table data on load
+      window.onload = (event) => {
+        const sortedProjectHistoryData = projectHistoryData.sort((a, b) => b.startDate.localeCompare(a.startDate));
+
+        for (const projectData of sortedProjectHistoryData) {
+          const { client, project, clientProjectID, technologies, responsibilities, startDate, endDate } = projectData;
+          const tableBody = document.getElementById("project-history-table-body");
+
+          const tableRow = document.createElement("tr");
+          tableRow.id = clientProjectID;
+          tableBody.appendChild(tableRow);
+
+          const clientCell = document.createElement("td");
+          clientCell.textContent = client;
+
+          const projectCell = document.createElement("td");
+          projectCell.textContent = project;
+
+          tableRow.appendChild(clientCell);
+          tableRow.appendChild(projectCell);
+
+          const technologiesID = `${clientProjectID}-technologies`;
+          const technologiesList = document.createElement("td");
+          technologiesList.id = technologiesID;
+          tableRow.append(technologiesList);
+          
+          // Display technologies as rounded badges with their respective colors based on category
+          for (const technology of technologies) {
+            const { name, category } = technology;
+            const color = categoryToColorMap[category];
+            const technologyCell = document.createElement("span");
+            technologyCell.className = `badge rounded-pill text-bg-${color}`;
+            technologyCell.textContent = name;
+            technologiesList.appendChild(technologyCell);
+          }
+
+          const responsibilitiesID = `${clientProjectID}-responsibilities`;
+          const responsibilitiesList = document.createElement("td");
+          responsibilitiesList.id = responsibilitiesID;
+          tableRow.append(responsibilitiesList);
+
+          // Display responsibilities as rounded, yellow badges
+          for (const responsibility of responsibilities) {
+            const responsibilityCell = document.createElement("span");
+            responsibilityCell.className = "badge rounded-pill text-bg-warning text-white";
+            responsibilityCell.textContent = responsibility;
+
+            responsibilitiesList.appendChild(responsibilityCell);
+          }
+
+          const periodCell = document.createElement("td");
+          const formattedStartDate = new Date(startDate).toLocaleString("default", {
+            month: "long",
+            year: "numeric"
+          });
+
+          // Display "Current" end dates in bold
+          if (endDate === "Current") {
+            const currentSpan = document.createElement("span");
+            currentSpan.textContent = endDate;
+            currentSpan.className = "fw-bold";
+
+            periodCell.textContent = `${formattedStartDate} - `;
+            periodCell.appendChild(currentSpan);
+          }
+
+          else {
+            const formattedEndDate = new Date(endDate).toLocaleString("default", {
+              month: "long",
+              year: "numeric"
+            });
+            periodCell.textContent = `${formattedStartDate} - ${formattedEndDate}`;
+          }
+          
+          tableRow.append(periodCell);
+        }
+      };
+    </script>
+  </body>
+</html>
