@@ -198,9 +198,13 @@ const projectHistoryData = [
 
         const technologiesID = `${clientProjectID}-technologies`;
         const technologiesList = document.createElement("td");
-        technologiesList.id = technologiesID;
-        tableRow.append(technologiesList);
-      
+
+        // Hacky workaround to two adjacent <td> cells with the d-flex class combining both cells' data
+        // into one
+        const innerTechnologiesList = document.createElement("div");
+        innerTechnologiesList.className = "d-flex flex-wrap gap-2";
+        innerTechnologiesList.id = technologiesID;
+        
         // Display technologies as rounded badges with their respective colors based on category
         for (const technology of technologies) {
             const { name, category } = technology;
@@ -208,13 +212,16 @@ const projectHistoryData = [
             const technologyCell = document.createElement("span");
             technologyCell.className = `badge rounded-pill text-bg-${color}`;
             technologyCell.textContent = name;
-            technologiesList.appendChild(technologyCell);
+            innerTechnologiesList.appendChild(technologyCell);
         }
+
+        technologiesList.appendChild(innerTechnologiesList);
+        tableRow.append(technologiesList);
 
         const responsibilitiesID = `${clientProjectID}-responsibilities`;
         const responsibilitiesList = document.createElement("td");
+        responsibilitiesList.className = "d-flex flex-wrap gap-2";
         responsibilitiesList.id = responsibilitiesID;
-        tableRow.append(responsibilitiesList);
 
         // Display responsibilities as rounded, yellow badges
         for (const responsibility of responsibilities) {
@@ -224,6 +231,8 @@ const projectHistoryData = [
 
             responsibilitiesList.appendChild(responsibilityCell);
         }
+
+        tableRow.append(responsibilitiesList);
 
         const periodCell = document.createElement("td");
         const formattedStartDate = new Date(startDate).toLocaleString("default", {
