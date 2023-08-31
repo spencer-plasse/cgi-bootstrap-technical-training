@@ -54,15 +54,25 @@
 					<h2>Contact Me</h2>
 					<form class="border border-dark rounded p-3">
 						<div class="mb-3">
-							<label for="firstName" class="form-label">First Name <span class="text-danger fw-bold">*</span></label>
+							<label for="firstName" class="form-label">First Name 
+								<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
+							</label>
 							<input type="text" class="form-control" id="firstName" placeholder="First Name">
 						</div>
 						<div class="mb-3">
-							<label for="emailAddress" class="form-label">Email Address <span class="text-danger fw-bold">*</span></label>
+							<label for="lastName" class="form-label">Last Name</label>
+							<input type="text" class="form-control" id="lastName" placeholder="Last Name (optional)">
+						</div>
+						<div class="mb-3">
+							<label for="emailAddress" class="form-label">Email Address 
+								<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
+							</label>
 							<input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
 						</div>
 						<div class="mb-3">
-							<label for="message" class="form-label">Message <span class="text-danger fw-bold">*</span></label>
+							<label for="message" class="form-label">Message 
+								<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
+							</label>
 							<textarea class="form-control" id="message" placeholder="Enter your message here!" rows="6"></textarea>
 						</div>
 						<div class="d-flex justify-content-center gap-2">
@@ -93,9 +103,10 @@
 
 			<script>
 				function submitContactForm() {
-					alert("Submitted!");
+					
 				}
 			</script>
+			<script type="text/javascript" src="../scripts/loadTooltips.js"></script>
 		</div>
   </body>
 </html>
