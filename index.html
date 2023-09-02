@@ -26,7 +26,7 @@
     ></script>
 
     <div class="container">
-			<nav class="navbar navbar-expand-md d-print navbar-light bg-light" role="navigation">
+			<nav class="navbar navbar-expand-md d-print navbar-light bg-light sticky-top" role="navigation">
 				<a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="index.html">CGI</a>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav mr-auto">
@@ -58,26 +58,94 @@
           <a class="nav-link text-dark" id="nav-technologies-tab" data-bs-toggle="tab" data-bs-target="#nav-technologies"
             role="tab" aria-controls="nav-technologies" aria-selected="false" href="#technologies-used">Technologies Used</a>
         </nav>
-        <main class="row mt-2">
-          <div class="tab-content col-md-8" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-              TODO
-            </div>
-            <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab" tabindex="0">
-              TODO
-            </div>
-            <div class="tab-pane fade" id="nav-pages" role="tabpanel" aria-labelledby="nav-pages-tab" tabindex="0">
-              TODO
-            </div>
-            <div class="tab-pane fade" id="nav-technologies" role="tabpanel" aria-labelledby="nav-technologies-tab" tabindex="0">
-              TODO
-            </div>
+        <div class="tab-content justify-content-center w-75 mt-4" id="nav-tabContent">
+          <div class="tab-pane fade card border-dark show active px-0" id="nav-home" role="tabpanel"
+            aria-labelledby="nav-home-tab" tabindex="0">
+            <header class="card-header">
+              Home
+            </header>
+            <section class="card-body">
+              <h5 class="card-title">Welcome!</h5>
+              <p>TODO</p>
+            </section>
+            <footer class="card-footer">
+              For detailed information on the project, view <span class="fw-semibold">README.md</span>.
+            </footer>
           </div>
-          <aside class="col-md-4">
-            <p>TODO</p>
-          </aside>
+          <div class="tab-pane fade card border-dark px-0" id="nav-about" role="tabpanel"
+            aria-labelledby="nav-about-tab" tabindex="0">
+            <header class="card-header">
+              About
+            </header>
+            <section class="card-body">
+              <h5 class="card-title">About the project</h5>
+              <p>TODO</p>
+            </section>
+            <footer class="card-footer">
+              For detailed information on the project, view <span class="fw-semibold">README.md</span>.
+            </footer>
+          </div>
+          <div class="tab-pane fade card border-dark px-0" id="nav-pages" role="tabpanel"
+            aria-labelledby="nav-pages-tab" tabindex="0">
+            <header class="card-header">
+              Pages
+            </header>
+            <section class="card-body pb-0">
+              <h5 class="card-title">Project pages</h5>
+              <p>This project consists of the following four pages:</p>
+              <dl class="row">
+                <dt class="col-sm-3"><a class="text-dark" href="">Home</a></dt>
+                <dd class="col-sm-9">
+                  Automatically opened when the website is launched. Contains high-level overviews
+                  of the project, including how it is organized and the technologies that were used. Accessible
+                  via the <span class="fw-semibold">CGI</span> and <span class="fw-semibold">Home</span> links
+                  in the navbar.
+                </dd>
+
+                <dt class="col-sm-3"><a class="text-dark" href="about.html">About Me</a></dt>
+                <dd class="col-sm-9">
+                  Contains various information about myself as well as a responsive image.
+                  Accessible via the <span class="fw-semibold">About Me</span> link in the navbar.
+                </dd>
+
+                <dt class="col-sm-3"><a class="text-dark" href="project-history.html">Project History</a></dt>
+                <dd class="col-sm-9">
+                  Contains a table of information on projects I have worked on since joining
+                  CGI, including technologies used, responsibilities, and a color legend. Accessible via the
+                  <span class="fw-semibold">Project History</span> link in the navbar.
+                </dd>
+
+                <dt class="col-sm-3"><a class="text-dark" href="contact.html">Contact Me</a></dt>
+                <dd class="col-sm-9">
+                  Contains a mock contact form with client-side input validation, a confirmation modal, and
+                  alert on successful form submission. Accessible via the <span class="fw-semibold">Contact Me</span>
+                  link in the navbar.
+                </dd>
+              </dl>
+            </section>
+            <footer class="card-footer text-muted">
+              For detailed information on each page, view <span class="fw-semibold">README.md</span>.
+            </footer>
+          </div>
+          <div class="tab-pane fade card border-dark px-0" id="nav-technologies" role="tabpanel"
+            aria-labelledby="nav-technologies-tab" tabindex="0">
+            <header class="card-header">
+              Technologies Used
+            </header>
+            <section class="card-body">
+              <h5 class="card-title">Technologies used / design decisions</h5>
+              <p>TODO</p>
+            </section>
+            <footer class="card-footer">
+              For detailed information on the technologies that were used, view <span class="fw-semibold">README.md</span>.
+            </footer>
+          </div>
         </div>
       </div>
+      <footer class="mt-4">
+        <p class="text-center">Developed by <span class="fw-semibold">Spencer Plasse</span> | CGI Bootstrap
+        / HTML5 Technical Training | <span class="fw-semibold">2023</span></p>
+      </footer>
 		</div>
   </body>
 </html>
