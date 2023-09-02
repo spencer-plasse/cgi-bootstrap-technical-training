@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<!-- Custom CSS stylesheets -->
+		<!-- Custom CSS stylesheet -->
 		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Bootstrap installation via CDN -->
@@ -27,6 +27,7 @@
     ></script>
 
     <div class="container">
+			<!-- Navbar -->
 			<nav class="navbar navbar-expand-md d-print navbar-light bg-light sticky-top" role="navigation">
 				<a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="index.html">CGI</a>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
@@ -55,8 +56,13 @@
 							Submit contact information and a message in the below form and I'll
 							reach out ASAP!
 						</p>
+
+						<!-- Dynamically populated via JavaScript on form submission -->
 						<div id="successAlert" class="d-flex justify-content-center"></div>
+
+						<!-- Form with validation -->
 						<form class="border border-dark rounded p-3" id="contactForm" novalidate>
+							<!-- Required text input -->
 							<div class="mb-3">
 								<label for="firstName" class="form-label">First Name 
 									<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
@@ -66,10 +72,14 @@
 									Please enter a first name.
 								</div>
 							</div>
+
+							<!-- Optional text input -->
 							<div class="mb-3">
 								<label for="lastName" class="form-label">Last Name</label>
 								<input type="text" class="form-control" id="lastName" placeholder="Last Name (optional)">
 							</div>
+
+							<!-- Required email text input -->
 							<div class="mb-3">
 								<label for="emailAddress" class="form-label">Email Address 
 									<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
@@ -79,6 +89,8 @@
 									Please enter a valid email address.
 								</div>
 							</div>
+
+							<!-- Required textarea -->
 							<div class="mb-3">
 								<label for="message" class="form-label">Message 
 									<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
@@ -98,6 +110,7 @@
 				</div>
 			</div>
 
+			<!-- Confirmation modal -->
 			<div class="modal" id="confirmationModal" tabindex="-1">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -116,6 +129,7 @@
 				</div>
 			</div>
 
+			<!-- Footer -->
 			<footer class="mt-4">
         <p class="text-center">Developed by <span class="fw-semibold">Spencer Plasse</span> | CGI Bootstrap
         / HTML5 Technical Training | <span class="fw-semibold">2023</span></p>
