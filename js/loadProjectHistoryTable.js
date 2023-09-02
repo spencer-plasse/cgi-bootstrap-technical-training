@@ -158,7 +158,7 @@ const projectHistoryData = [
     },
     {
         client: "CGI",
-        project: "Bootstrap/HTML5 Technical Training",
+        project: "Bootstrap / HTML5 Technical Training",
         clientProjectID: "cgi-bootstrap-html5",
         technologies: [
             { name: "HTML5", category: "frontend" },

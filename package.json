@@ -1,9 +1,17 @@
 {
-    "name": "sass-js",
-    "description": "Include Bootstrap's source Sass and compiled JavaScript bundle via npm.",
-    "version": "0.0.0",
+    "name": "cgi-bootstrap-technical-training",
+    "description": "This project was completed for the CGI Bootstrap / HTML5 Technical Training.",
+    "author": "Spencer Plasse",
+    "version": "1.0.0",
     "private": true,
-    "repository": "twbs/examples",
+    "repository": {
+        "type": "git",
+		"url": "https://github.com/spencer-plasse/cgi-bootstrap-technical-training"
+    },
+    "bugs": {
+		"url": "https://github.com/spencer-plasse/cgi-bootstrap-technical-training/issues"
+	},
+    "homepage": "https://github.com/spencer-plasse/cgi-bootstrap-technical-training#readme",
     "license": "MIT",
     "stackblitz": {
         "startCommand": "npm start"
