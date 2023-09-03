@@ -29,58 +29,72 @@
     <div class="container">
       <!-- Navbar -->
 			<nav class="navbar navbar-expand-md d-print navbar-light bg-light sticky-top" role="navigation">
-				<a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="index.html">CGI</a>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" href="about.html">About Me</a>
-						</li>
-            <li class="nav-item">
-							<a class="nav-link" href="project-history.html">Project History</a>
-						</li>
-            <li class="nav-item active">
-							<a class="nav-link" href="contact.html">Contact Me</a>
-						</li>
-					</ul>
-				</div>
+        <div class="container-fluid">
+          <a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="index.html">CGI</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="active" href="about.html">About Me</a>
+              </li>
+              <li>
+                <a href="project-history.html">Project History</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact Me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 			</nav>
-      <main id="page-content" class="row">
-        <!-- Image -->
-        <div id="about-me-image" class="d-flex flex-column col-md-6 align-items-center">
-          <h2>Spencer Plasse</h2>
-          <img src="../static/Me.jpeg" class="img-fluid h-100" alt="Picture of myself!" />
+
+      <!-- Page content -->
+      <main id="page-content"  class="d-flex row justify-content-center mt-2">
+        <h2 class="d-flex d-row justify-content-center">About Me</h2>
+
+        <!-- Card -->
+        <div class="card px-0">
+          <div class="card-body row">
+            <!-- Image content -->
+            <div class="col-md-4">
+              <img src="../static/Me.jpeg" class="img-fluid px-2 pb-2"
+                alt="Picture of myself in Shelby Hall at the University of South Alabama!" />
+            </div>
+
+            <!-- Text content -->
+            <div class="col-md-8">
+              <p>
+                Hey there! My name is Spencer Plasse and I am 22 years old. I was born and raised in Mobile, AL, and currently
+                live in the West Mobile area with my wife, 3 dogs, and multiple cats. We are also expecting our first child this
+                month (September 2023)!
+                <br /><br />
+                In my free time, I enjoy playing, listening to, and composing music. My favorite genres are alternative/indie,
+                country, and video-game soundtracks (which I also compose). I play piano often as well as some guitar and bass.
+                I'm a big PC and Nintendo Switch gamer as well. My favorite games include Minecraft, Undertale, Rocket League,
+                Hollow Knight, Don't Starve Together, and Enter the Gungeon.
+                <br /><br />
+                I love to travel. My favorite trip so far has been for my wife and I's 1-year anniversary where we flew out west
+                for the first time to Las Vegas. The city itself was a cultural shock having lived in the south our whole lives,
+                but we loved the experience. We also got to visit the Grand Canyon (which was covered in snow), stay in
+                Flagstaff, AZ for a few days, and eat plenty of In-N-Out.
+                <br /><br />
+                I joined CGI in January 2022 and am a P2 Consultant at the Mobile, AL office. I have been privileged to have worked
+                on a number of projects since joining, including Boot Camp, two clients, four technical trainings, and assisting
+                with new YEET development, all of which can be viewed <a href="project-history.html" class="text-decoration-none">here</a>.
+                <br /><br />
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- Text page content -->
-        <div class="d-flex flex-column col-md-6 justify-content-center">
-          <h2 class="d-flex d-row justify-content-center">About Me</h2>
-          <p>
-            Hey there! My name is Spencer Plasse and I am 22 years old. I was born and raised in Mobile, AL, and currently
-            live in the West Mobile area with my wife, 3 dogs, and multiple cats. We are also expecting our first child this
-            month (September 2023)!
-            <br /><br />
-            In my free time, I enjoy playing, listening to, and composing music. My favorite genres are alternative/indie,
-            country, and video-game soundtracks (which I also compose). I play piano often as well as some guitar and bass.
-            I'm a big PC and Nintendo Switch gamer as well. My favorite games include Minecraft, Undertale, Rocket League,
-            Hollow Knight, Don't Starve Together, and Enter the Gungeon.
-            <br /><br />
-            I love to travel. My favorite trip so far has been for my wife and I's 1-year anniversary where we flew out west
-            for the first time to Las Vegas. The city itself was a cultural shock, but we loved the experience. We also got
-            to visit the Grand Canyon (which was covered in snow), stay in Flagstaff, AZ for a few days, and eat plenty of
-            In-N-Out.
-            <br /><br />
-            I joined CGI in January 2022 and am a P2 Consultant at the Mobile, AL office. I have been privileged to have worked
-            on a number of projects since joining, including Boot Camp, two clients, four technical trainings, and assisting
-            with new YEET development, all of which can be viewed <a href="project-history.html" class="text-decoration-none">here</a>.
-            <br /><br />
-          </p>
-      </div>
-
       <!-- Footer -->
-      <footer class="fixed-bottom">
+      <footer class="mt-md-1 mt-lg-4">
         <p class="text-center">Developed by <span class="fw-semibold">Spencer Plasse</span> | CGI Bootstrap
         / HTML5 Technical Training | <span class="fw-semibold">2023</span></p>
       </footer>

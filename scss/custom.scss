@@ -1,9 +1,36 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+// Declaring variable
+$content-footer-separation: 25px;
+
+// Referencing variable
 main#page-content {
-    padding-bottom: 25px;
+    padding-bottom: $content-footer-separation;
 }
 
+// Declaring mixin
+@mixin limit-height($max) {
+    max-height: $max;
+}
+
+// Calling mixin
 #about-me-image {
-    max-height: 500px;
+    @include limit-height(400px);
+}
+
+// Extending styles
+.nav-tab {
+    @extend .nav-link;
+    @extend .text-dark;
+}
+
+// Nested rule (for navbar)
+ul.navbar-nav {
+    li {
+        @extend .nav-item;
+
+        a {
+            @extend .nav-link;
+        }
+    }
 }

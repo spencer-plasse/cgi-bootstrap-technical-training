@@ -179,7 +179,7 @@ const projectHistoryData = [
 
 // Load project history table data on load
 window.onload = (event) => {
-    const sortedProjectHistoryData = projectHistoryData.sort((a, b) => b.startDate.localeCompare(a.startDate));
+    const sortedProjectHistoryData = projectHistoryData.sort((a, b) => b.endDate.localeCompare(a.endDate));
 
     for (const projectData of sortedProjectHistoryData) {
         const { client, project, clientProjectID, technologies, responsibilities, startDate, endDate } = projectData;
