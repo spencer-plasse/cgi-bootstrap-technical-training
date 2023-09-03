@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CGI - Bootstrap Technical Training - Spencer Plasse</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Custom CSS stylesheet -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Bootstrap installation via CDN -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	</head>
+  <body>
+    <!-- Bootstrap JavaScript installation via CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+
+    <div class="container">
+			<!-- Navbar -->
+			<nav class="navbar navbar-expand-md d-print navbar-light bg-light sticky-top" role="navigation">
+				<div class="container-fluid">
+					<a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="index.html">CGI</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+							aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<ul class="navbar-nav mr-auto">
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="about.html">About Me</a>
+							</li>
+							<li>
+								<a href="project-history.html">Project History</a>
+							</li>
+							<li>
+								<a class="active" href="contact.html">Contact Me</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<main id="page-content" class="row">
+				<div class="d-flex flex-column mt-2 align-items-center">
+					<div class="col-md-6">
+						<h2 class="d-flex d-row justify-content-center">Contact Me</h2>
+						<p class="d-flex d-row justify-content-center text-center">
+							Submit contact information and a message in the below form and I'll
+							reach out ASAP!
+						</p>
+
+						<!-- Dynamically populated via JavaScript on form submission -->
+						<div id="successAlert" class="d-flex justify-content-center"></div>
+
+						<!-- Form with validation -->
+						<form class="border border-dark rounded p-3" id="contactForm" novalidate>
+							<!-- Required text input -->
+							<div class="mb-3">
+								<label for="firstName" class="form-label">First Name 
+									<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
+								</label>
+								<input type="text" class="form-control" id="firstName" placeholder="First Name" required autofocus>
+								<div class="invalid-feedback">
+									Please enter a first name.
+								</div>
+							</div>
+
+							<!-- Optional text input -->
+							<div class="mb-3">
+								<label for="lastName" class="form-label">Last Name</label>
+								<input type="text" class="form-control" id="lastName" placeholder="Last Name (optional)">
+							</div>
+
+							<!-- Required email text input -->
+							<div class="mb-3">
+								<label for="emailAddress" class="form-label">Email Address 
+									<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
+								</label>
+								<input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" required>
+								<div class="invalid-feedback">
+									Please enter a valid email address.
+								</div>
+							</div>
+
+							<!-- Required textarea -->
+							<div class="mb-3">
+								<label for="message" class="form-label">Message 
+									<span class="text-danger fw-bold" data-bs-toggle="tooltip" data-bs-title="Required">*</span>
+								</label>
+								<textarea class="form-control" id="message" placeholder="Enter your message here!" rows="6"
+									wrap="soft" required></textarea>
+								<div class="invalid-feedback">
+									Please enter a message.
+								</div>
+							</div>
+							<div class="d-flex justify-content-center gap-2">
+								<button type="button" class="btn btn-success" onclick="validateContactForm()">Submit</button>
+								<button type="reset" class="btn btn-secondary" onclick="resetContactForm()">Reset</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- Confirmation modal -->
+			<div class="modal" id="confirmationModal" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Contact Form Confirmation</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p>Are you sure you want to submit this form?</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success" onclick="submitContactForm()" data-bs-dismiss="modal">Submit</button>
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<footer class="mt-4">
+        <p class="text-center">Developed by <span class="fw-semibold">Spencer Plasse</span> | CGI Bootstrap
+        / HTML5 Technical Training | <span class="fw-semibold">2023</span></p>
+      </footer>
+
+			<script>
+				function validateContactForm() {
+					const form = document.getElementById("contactForm");
+
+					if (form.checkValidity()) {
+						const modal = new bootstrap.Modal("#confirmationModal");
+						modal.show();
+					}
+
+					form.classList.add("was-validated");
+				}
+
+				function submitContactForm() {
+					resetContactForm();
+
+					innerSuccessAlert = document.createElement("div");
+					innerSuccessAlert.id = "innerSuccessAlert";
+					innerSuccessAlert.className = "";
+					innerSuccessAlert.innerHTML = [
+						`<div class="alert alert-success alert-dismissible" role="alert">`,
+						`   <div>Successfully submitted the contact form!</div>`,
+						'   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+						'</div>'
+					].join('')
+
+					successAlert.append(innerSuccessAlert)
+				}
+
+				function resetContactForm() {
+					const form = document.getElementById("contactForm");
+					form.reset();
+					form.classList.remove("was-validated");
+					
+					const successAlert = document.getElementById("successAlert");
+					let innerSuccessAlert = document.getElementById("innerSuccessAlert");
+
+					if (innerSuccessAlert) {
+						successAlert.removeChild(innerSuccessAlert);
+					}
+				}
+			</script>
+			<script type="text/javascript" src="js/loadTooltips.js"></script>
+		</div>
+  </body>
+</html>

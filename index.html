@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CGI - Bootstrap Technical Training - Spencer Plasse</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Custom CSS stylesheet -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Bootstrap installation via CDN -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Bootstrap JavaScript installation via CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+
+    <div class="container">
+      <!-- Navbar -->
+			<nav class="navbar navbar-expand-md d-print navbar-light bg-light sticky-top" role="navigation">
+        <div class="container-fluid">
+          <a class="h2 fw-semibold text-danger text-decoration-none mx-4" href="index.html">CGI</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li>
+                <a class="active" href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="about.html">About Me</a>
+              </li>
+              <li>
+                <a href="project-history.html">Project History</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact Me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+			</nav>
+
+      <main id="page-content" class="d-flex row justify-content-center mt-2">
+        <h2 class="d-flex d-row justify-content-center">CGI Bootstrap / HTML5 Technical Training</h2>
+
+        <!-- Nav (tabs) -->
+        <nav id="contentNav" class="nav nav-tabs flex-row col-md-6 gap-5 justify-content-center mt-2" role="tablist">
+          <a class="nav-tab active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+            role="tab" aria-controls="nav-home" aria-selected="true" href="#">Home</a>
+          <a class="nav-tab" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about"
+            role="tab" aria-controls="nav-about" aria-selected="false" href="#about">About</a>
+          <a class="nav-tab" id="nav-pages-tab" data-bs-toggle="tab" data-bs-target="#nav-pages"
+            role="tab" aria-controls="nav-pages" aria-selected="false" href="#pages">Pages</a>
+        </nav>
+
+        <!-- Cards activated by nav tabs -->
+        <div class="tab-content justify-content-center w-75 mt-4" id="nav-tabContent">
+          <div class="tab-pane fade card border-dark show active px-0" id="nav-home" role="tabpanel"
+            aria-labelledby="nav-home-tab" tabindex="0">
+            <header class="card-header fw-semibold">
+              Home
+            </header>
+            <section class="card-body">
+              <h5 class="card-title">Welcome!</h5>
+              <p>
+                This project was developed between August - September 2023 as part of completing the
+                <span class="fw-semibold">CGI Bootstrap / HTML5 Technical Training</span> Navigate through
+                each page via the navbar header or through the cards of this page via the nav tabs above.
+              </p>
+              <p>
+                <span class="fw-semibold">Note</span>: While I have prior Bootstrap experience, web design is
+                an area I generally have less expertise in than others. Web design/development is a passion of
+                mine and I'm only looking to improve. I welcome any constructive criticism, suggestions, or
+                advice. Thanks in advance for taking the time to review!
+              </p>
+            </section>
+          </div>
+          <div class="tab-pane fade card border-dark px-0" id="nav-about" role="tabpanel"
+            aria-labelledby="nav-about-tab" tabindex="0">
+            <header class="card-header fw-semibold">
+              About
+            </header>
+            <section class="card-body">
+              <h5 class="card-title">About the project</h5>
+              <p>
+                This website heavily utilizes Bootstrap v5.2 in addition to standard HTML5 / CSS3 for clean,
+                professional, and responsive web UI/UX. Each page (four in total) contains different Bootstrap
+                components and utilities, listed below:
+              </p>
+              <ul>
+                <li class="fw-semibold">General</li>
+                <ul>
+                  <li>Navbar</li>
+                  <li>Footer</li>
+                  <li>Grid Organization (rows/columns)</li>
+                </ul>
+                <li class="fw-semibold">Home</li>
+                <ul>
+                  <li>Nav (tabs)</li>
+                  <li>Cards</li>
+                </ul>
+                <li class="fw-semibold">About Me</li>
+                <ul>
+                  <li>Image</li>
+                </ul>
+                <li class="fw-semibold">Project History</li>
+                <ul>
+                  <li>Accordion - <span class="fst-italic">can collapse the color legend</span></li>
+                  <li>Table</li>
+                  <li>Badges</li>
+                </ul>
+                <li class="fw-semibold">Contact Me</li>
+                <ul>
+                  <li>Form</li>
+                  <li>Tooltips - <span class="fst-italic">hover over * by form element labels</span></li>
+                  <li>Modal - <span class="fst-italic">displayed between form validation and submission</span></li>
+                  <li>Alert - <span class="fst-italic">displayed after successful form submission</span></li>
+                </ul>
+              </ul>
+            </section>
+            <footer class="card-footer text-muted">
+              For detailed information on the project, view <span class="fw-semibold">README.md</span>.
+            </footer>
+          </div>
+          <div class="tab-pane fade card border-dark px-0" id="nav-pages" role="tabpanel"
+            aria-labelledby="nav-pages-tab" tabindex="0">
+            <header class="card-header fw-semibold">
+              Pages
+            </header>
+            <section class="card-body pb-0">
+              <h5 class="card-title">Project pages</h5>
+              <p>This project consists of the following four pages:</p>
+              <dl class="row">
+                <dt class="col-sm-3"><a class="text-dark" href="">Home</a></dt>
+                <dd class="col-sm-9">
+                  Automatically opened when the website is launched. Contains high-level overviews
+                  of the project, including how it is organized and the technologies that were used. Accessible
+                  via the <span class="fw-semibold">CGI</span> and <span class="fw-semibold">Home</span> links
+                  in the navbar.
+                </dd>
+
+                <dt class="col-sm-3"><a class="text-dark" href="about.html">About Me</a></dt>
+                <dd class="col-sm-9">
+                  Contains various information about myself as well as a responsive image.
+                  Accessible via the <span class="fw-semibold">About Me</span> link in the navbar.
+                </dd>
+
+                <dt class="col-sm-3"><a class="text-dark" href="project-history.html">Project History</a></dt>
+                <dd class="col-sm-9">
+                  Contains a table of information on projects I have worked on since joining
+                  CGI, including technologies used, responsibilities, and a color legend. Accessible via the
+                  <span class="fw-semibold">Project History</span> link in the navbar.
+                </dd>
+
+                <dt class="col-sm-3"><a class="text-dark" href="contact.html">Contact Me</a></dt>
+                <dd class="col-sm-9">
+                  Contains a mock contact form with client-side input validation, a confirmation modal, and
+                  alert on successful form submission. Accessible via the <span class="fw-semibold">Contact Me</span>
+                  link in the navbar.
+                </dd>
+              </dl>
+            </section>
+            <footer class="card-footer text-muted">
+              For detailed information on each page, view <span class="fw-semibold">README.md</span>.
+            </footer>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p class="text-center">
+          Developed by <span class="fw-semibold">Spencer Plasse</span> | CGI Bootstrap
+          / HTML5 Technical Training | <span class="fw-semibold">2023</span>
+        </p>
+      </footer>
+		</div>
+  </body>
+</html>
